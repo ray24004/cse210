@@ -2,8 +2,14 @@ using System;
 
 class Program
 {
+    // EXCEEDING REQUIREMENTS: Improved the process of saving 
+    // and loading to save as a .csv file that could be opened in Excel,
+    // making sure to account for quotation marks and commas correctly in the content.
+    // (feature present in Entry.cs file)
+    
+    
     static Journal journal = new Journal();
-    static PromptGenerator promptGenerator = new PromptGenerator();
+    static PromptGenerator _promptGenerator = new PromptGenerator();
 
     static void Main(string[] args)
     {
@@ -20,13 +26,13 @@ class Program
                     WriteNewEntry();
                     break;
                 case "2":
-                    DisplayEntries();
+                    DisplayAllEntries();
                     break;
                 case "3":
-                    SaveToFile();
+                    SaveEntriesToFile();
                     break;
                 case "4":
-                    LoadFromFile();
+                    LoadEntriesFromFile();
                     break;
                 case "5":
                     break;
@@ -60,7 +66,7 @@ class Program
     static void WriteNewEntry()
     {
         string todayDate = DateTime.Now.ToShortDateString();
-        string randomPrompt = promptGenerator.GetRandomPrompt();
+        string randomPrompt = _promptGenerator.GetRandomPrompt();
 
         Console.WriteLine($"{todayDate} - {randomPrompt}");
         Console.Write("Response: ");
@@ -74,21 +80,21 @@ class Program
         });
     }
 
-    static void DisplayEntries()
+    static void DisplayAllEntries()
     {
         journal.DisplayAll();
     }
 
-    static void SaveToFile()
+    static void SaveEntriesToFile()
     {
-        Console.Write($"Type desired filename: ");
+        Console.Write($"Type desired filename (example.csv): ");
         string filename = Console.ReadLine();
         journal.SaveToFile(filename);
     }
 
-    static void LoadFromFile()
+    static void LoadEntriesFromFile()
     {
-        Console.Write($"Type the filename: ");
+        Console.Write($"Type the filename (example.csv): ");
         string filename = Console.ReadLine();
         journal.LoadFromFile(filename);
     }

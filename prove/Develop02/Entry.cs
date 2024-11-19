@@ -11,10 +11,10 @@ public class Entry
             return;
         }
 
-        string[] entryParts = csvEntry.Split(";");
-        _date = entryParts[0];
-        _promptText = entryParts[1];
-        _entryText = entryParts[2];
+        string[] entryParts = csvEntry.Split("\",\"");
+        _date = entryParts[0].Trim('\"');
+        _promptText = entryParts[1].Trim('\"');;
+        _entryText = entryParts[2].Trim('\"');;
     }
     public void Display()
     {
@@ -25,7 +25,19 @@ public class Entry
 
     public string ToCSV()
     {
-        return string.Join(";", _date, _entryText, _promptText);
-    }
+        string[] dataParts = [
+            _date,
+            _promptText,
+            _entryText,
+        ];
 
+        string csvLine = "";
+        foreach(string data in dataParts) 
+        {
+            csvLine += $"\"{data}\",";
+        }
+        csvLine = csvLine.Trim(',');
+
+        return csvLine;
+    }
 }

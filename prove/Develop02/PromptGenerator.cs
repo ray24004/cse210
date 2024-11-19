@@ -8,11 +8,11 @@ public class PromptGenerator
         "If I had one thing I could do over today, what would it be?",
     ];
 
-    private Random random = new Random();
+    private Random _random = new Random();
 
     public string GetRandomPrompt()
     {
-        int randomIndex = random.Next(_prompts.Count);
+        int randomIndex = _random.Next(_prompts.Count);
         return _prompts[randomIndex];
     }
 }
