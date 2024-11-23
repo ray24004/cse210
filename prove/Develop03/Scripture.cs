@@ -36,6 +36,7 @@ public class Scripture
         {
             Word randomWord = visibleWords[random.Next(visibleWords.Count)];
             randomWord.Hide();
+            
             visibleWords.Remove(randomWord);
             amount--;
         }
