@@ -1,3 +1,7 @@
+// Showing Creativity and Exceeding Requirements:
+// Pick a random scripture from a csv file listing
+// Doctrinal Mastery Key Phrases from the Book of Mormon
+
 using System;
 
 class Program
