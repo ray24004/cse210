@@ -6,7 +6,7 @@ public class Scripture
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
-        
+
         string[] textWords = text.Split(' ');
         foreach (string textWord in textWords)
         {
@@ -36,7 +36,7 @@ public class Scripture
         {
             Word randomWord = visibleWords[random.Next(visibleWords.Count)];
             randomWord.Hide();
-            
+
             visibleWords.Remove(randomWord);
             amount--;
         }

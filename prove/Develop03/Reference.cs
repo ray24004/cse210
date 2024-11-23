@@ -12,7 +12,7 @@ public class Reference
         _startVerse = verse;
         _endVerse = verse;
     }
-    
+
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
         _book = book;

@@ -6,7 +6,7 @@ public class RandomScripturePicker
     {
         string[] fileLines = File.ReadAllLines(csvFilename);
         _scriptures = new Scripture[fileLines.Length];
-        
+
         for (int i = 0; i < fileLines.Length; i++)
         {
             _scriptures[i] = GetScriptureFromCsvLine(fileLines[i], csvDelimiter);
