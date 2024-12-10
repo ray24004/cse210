@@ -13,9 +13,9 @@ public class ListingActivity : Activity
 
     }
 
-    private void GetRandomPrompt()
+    private string GetRandomPrompt()
     {
-
+        return "";
     }
 
     private List<string> GetListFromUser()
