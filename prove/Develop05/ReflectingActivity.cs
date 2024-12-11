@@ -1,7 +1,8 @@
 public class ReflectingActivity : Activity
 {
-    public List<string> _prompts;
-    public List<string> _questions;
+    private List<string> _prompts;
+    private List<string> _questions;
+    private List<string> _remainingQuestions = new List<string>();
 
     public ReflectingActivity()
     {
@@ -46,7 +47,16 @@ public class ReflectingActivity : Activity
 
     private string GetRandomQuestion()
     {
-        return _questions[new Random().Next(_questions.Count)];
+        if (_remainingQuestions.Count == 0)
+        {
+            _remainingQuestions.AddRange(_questions);
+        }
+
+        int randomIndex = new Random().Next(_remainingQuestions.Count);
+        string randomQuestion = _remainingQuestions[randomIndex];
+        _remainingQuestions.RemoveAt(randomIndex);
+        
+        return randomQuestion;
     }
 
     private void DisplayPrompt()

@@ -4,11 +4,6 @@ public class Activity
     protected string _description;
     protected int _duration;
 
-    public Activity()
-    {
-
-    }
-
     public void DisplayStartingMessage()
     {
         Console.Clear();

@@ -1,3 +1,9 @@
+//
+//  Showing Creativity and Exceeding Requirements:
+//  Make sure no random questions are selected until they have all been
+//  used at least once in a Reflecting Activity session.
+//
+
 using System;
 
 class Program
@@ -7,7 +13,7 @@ class Program
         Console.WriteLine("Hello Develop05 World!");
         Console.WriteLine();
 
-        while(true)
+        while (true)
         {
             switch (RequestMenuOption())
             {
@@ -30,7 +36,7 @@ class Program
     {
         Console.Clear();
 
-        Console.WriteLine(
+        Console.Write(
             """
             Menu Options:
                 1. Start breathing activity
