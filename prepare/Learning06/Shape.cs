@@ -17,5 +17,5 @@ public abstract class Shape
         _color = color;
     }
 
-    public abstract double GetArea()
+    public abstract double GetArea();
 }
