@@ -1,0 +1,4 @@
+0
+SimpleGoal:task,complete,100,False
+EternalGoal:infinite,daily,50
+ChecklistGoal:steps,process,10,100,5,0
