@@ -27,11 +27,22 @@ public class ChecklistGoal : Goal
         return _amountcompleted >= _targetAmount;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        if(_amountcompleted < _targetAmount)
+        _amountcompleted++;
+
+        if (_amountcompleted < _targetAmount)
         {
-            _amountcompleted++;
+            return _points;
+        }
+        else if(_amountcompleted == _targetAmount)
+        {
+            return _points + _bonusPoints;
+        }
+        else
+        {
+            _amountcompleted = _targetAmount;
+            return 0;
         }
     }
 

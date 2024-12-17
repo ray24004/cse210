@@ -20,7 +20,7 @@ public abstract class Goal
         int.TryParse(dataParts[2], out _points);
     }
 
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
 
     public abstract bool IsComplete();
 

@@ -15,8 +15,8 @@ public class EternalGoal : Goal
         return false;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        throw new NotImplementedException();
+        return _points;
     }
 }

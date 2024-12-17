@@ -66,7 +66,7 @@ public class GoalManager
         for (int i = 0; i < _goals.Count; i++)
         {
             Goal goal = _goals[i];
-            Console.WriteLine($"    {i + 1}. {goal.GetDetailsString()})");
+            Console.WriteLine($"    {i + 1}. {goal.GetDetailsString()}");
         }
 
         Console.WriteLine();
@@ -112,7 +112,18 @@ public class GoalManager
 
     public void RecordEvent()
     {
+        Console.WriteLine("The goals are: ");
 
+        for (int i = 0; i < _goals.Count; i++)
+        {
+            Goal goal = _goals[i];
+            Console.WriteLine($"{i + 1}. {goal.GetDetailsString()}");
+        }
+
+        Console.Write("Which goal did you accomplish? ");
+        int.TryParse(Console.ReadLine(), out int option);
+
+        _score += _goals[option - 1].RecordEvent();
     }
 
     public void SaveGoals()
@@ -140,7 +151,7 @@ public class GoalManager
 
         for (int i = 0; i < lines.Length; i++)
         {
-            string line = lines[0];
+            string line = lines[i];
 
             if (i == 0)
             {
