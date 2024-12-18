@@ -55,6 +55,7 @@ public class GoalManager
 
     public void DisplayPlayerInfo()
     {
+        Console.WriteLine();
         Console.WriteLine($"You have {_score} points.");
         Console.WriteLine();
     }
@@ -123,7 +124,11 @@ public class GoalManager
         Console.Write("Which goal did you accomplish? ");
         int.TryParse(Console.ReadLine(), out int option);
 
-        _score += _goals[option - 1].RecordEvent();
+        int reward = _goals[option - 1].RecordEvent();
+        _score += reward;
+
+        Console.WriteLine($"Congratulations! You have earned {reward} points!");
+        Console.WriteLine($"You now have {_score} points.");
     }
 
     public void SaveGoals()
